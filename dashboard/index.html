@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span><h1>TOKEN RADAR</h1><span class="tag">pre-token · ranked by implied value</span></div>
+  <p class="sub">Which protocol is worth farming next, and what to do about it. Snapshot <b id="asof"></b> · DefiLlama protocols at $5M+ TVL · a protocol is listed as pre-token when its record shows no token — that is the record, not proof.</p>
+</header>
+<section class="stats" id="stats"></section>
+<section class="model" id="model"></section>
+<nav class="tabs">
+  <button class="tab active" data-view="board">Pre-token board</button>
+  <button class="tab" data-view="live">Already trading</button>
+</nav>
+<section class="controls" id="controls">
+  <input id="q" type="search" placeholder="Search name or slug…" aria-label="Search protocols">
+  <select id="cat" aria-label="Filter by category"><option value="">All categories</option></select>
+  <select id="chain" aria-label="Filter by chain"><option value="">All chains</option></select>
+  <select id="sort" aria-label="Sort board">
+    <option value="implied">Sort: implied value ↓</option>
+    <option value="tvl">Sort: TVL ↓</option>
+    <option value="growth">Sort: 7-day change ↓</option>
+    <option value="age">Sort: oldest first</option>
+  </select>
+  <label class="check"><input type="checkbox" id="watch"> Watchlist only</label>
+</section>
+<p class="count" id="count"></p>
+<main>
+  <table id="board">
+    <thead><tr><th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th><th>Chains</th><th data-k="tvl">TVL</th><th data-k="growth">7d</th><th data-k="age">Age</th><th data-k="implied">Implied value</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <table id="live" hidden>
+    <thead><tr><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>Market cap</th><th>Mcap / TVL</th><th>7d</th></tr></thead>
+    <tbody id="liverows"></tbody>
+  </table>
+  <aside id="detail" hidden></aside>
+</main>
+<footer><p>Implied value is this radar's own claim from the snapshot's figures — TVL, 7-day growth and time running with no token recorded — calibrated on the live-token market in the same snapshot. It is not a prediction that a token will be issued, or when. Farm steps are a plan, not advice; never pay anyone to claim an airdrop.</p></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
